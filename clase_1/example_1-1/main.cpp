@@ -17,11 +17,13 @@ int main()
 
     // Change the state of the alarmLED by reading the gasDetector input
     while (true) {
+        // If gas detector is on, then turn on the alarm.
         if ( gasDetector == ON ) {
         printf("%s\n", "Turning led ON");
         alarmLed = ON;
         }
-        
+
+        // If gas detector is off, then turn off the alarm.        
         if ( gasDetector == OFF ) {
         printf("%s\n", "Turning led OFF");
             alarmLed = OFF;

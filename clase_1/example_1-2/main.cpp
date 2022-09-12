@@ -19,11 +19,13 @@ int main()
 
     // Change the state of the alarmLED by reading the gasDetector input
     while (true) {
+        // If gas detector is on, then turn on the alarm.
         if (gpio_read(&gas_detector) == ON) {
             printf("%s\n", "Turning led ON");
             gpio_write(&alarm_led, ON);;
         }
         
+        // If gas detector is off, then turn off the alarm.
         if (gpio_read(&gas_detector) == OFF) {
             printf("%s\n", "Turning led OFF");
             gpio_write(&alarm_led, OFF);;
